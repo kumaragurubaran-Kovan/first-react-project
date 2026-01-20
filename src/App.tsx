@@ -1,46 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+// import { useState } from 'react'
+// import reactLogo from './assets/react.svg'
+// import viteLogo from '/vite.svg'
+// import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import './App.css'
+
+
 
 function App() {
 
-  const [counter, setCounter ]= useState(0);
-  
-  function Increment(){
-    if (counter<0) {
-      setCounter(0);
-    }
-    else{
-    setCounter(counter+1);
-    }
-  };
-  
-  function Decrement(){
-    if (counter<0) {
-      setCounter(0);
-    }
-    else{
-    if (counter<=0) return
-    setCounter(counter-1);
-    }
-  };
-  
-
-  return(
-    <div>
-      <button onClick={Increment}>
-        +
-      </button>
-      <div>
-        {counter}
-      </div>
-      <button onClick={Decrement}>
-        -
-      </button>
-    </div>
-  )
-};
-
-
+const heading = <h1 id="heading">Hello World</h1>
+return heading
+}
 export default App
