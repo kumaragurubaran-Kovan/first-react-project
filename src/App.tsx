@@ -13,7 +13,7 @@ return heading
 }
 
 
-function Name(){
+export function Name(){
   const [appName, setName] = useState("Noname");
 
   function changeName(){
@@ -32,5 +32,31 @@ function Name(){
   )
 }
 
+const Card = (props: { cardData: any; }) => {
+  const {cardData} = props;
 
-export default Name
+  const {Name, Price} = cardData;
+
+
+  return(
+    <div className="card">
+      <h2>{Name}</h2>
+      <h3>${Price}</h3>
+    </div>
+  )
+}
+
+const cardDteatils = 
+  {Name: "Python",
+  id: 45,
+  Price: 1245};
+
+function Body(){
+  return(
+    <div>
+      <Card key = {cardDteatils.id} cardData = {cardDteatils}/>
+    </div>
+  )
+}
+
+export default Body
