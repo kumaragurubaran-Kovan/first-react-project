@@ -13,16 +13,44 @@ function Garage(){
     }
 
     const bikeDetails = {
-        // brandName: "Bajaj",
-        // Model: "AR",
+        brandName: "Bajaj",
+        Model: "AR",
     }
+
+    const bikeCondition = bikeDetails.brandName !== undefined && bikeDetails.Model !== undefined;
+    
+    const bikeList = [
+        {
+        brandName: "Bajaj",
+        Model: "AR",
+        },
+        {
+        brandName: "BMW",
+        Model: "AR",
+        },
+        {
+        brandName: "Yamaha",
+        Model: "AR",
+        },
+        {
+        brandName: "Enfield",
+        Model: "AR",
+        },
+    ]
 
     return(
         <>
             <h1>Cars</h1>
+            <ul>
+                {bikeList.map((bikeDetails) => {
+                    return(
+                        <li><Bike bikeDetails = {bikeDetails}/></li>
+                    )
+                    })}
+            </ul>
             <Cars carDetails = {carDetails} color="red"/>
             {/* {console.log(brandName)} */}
-            {bikeDetails.brandName !== undefined && bikeDetails.Model !== undefined ?
+            { bikeCondition ?
             <Bike bikeDetails = {bikeDetails}/> :null}
         </>
     )
