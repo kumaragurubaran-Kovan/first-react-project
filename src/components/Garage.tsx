@@ -2,8 +2,6 @@ import Cars from "./Cars";
 import Bike from "./Bike";
 
 
-
-
 function Garage(){
     // const brandName = "Audi";
     // const Model = "M100";
@@ -38,15 +36,19 @@ function Garage(){
         },
     ]
 
+    const numList =[1,2,3,4,5]
     return(
         <>
             <h1>Cars</h1>
             <ul>
                 {bikeList.map((bikeDetails) => {
                     return(
-                        <li><Bike bikeDetails = {bikeDetails}/></li>
+                        <li key={bikeDetails.brandName}><Bike bikeDetails = {bikeDetails}/></li>
                     )
                     })}
+            </ul>
+            <ul>
+                {numList.map((e, index) => <h1 key= {index}>{e}</h1>)}
             </ul>
             <Cars carDetails = {carDetails} color="red"/>
             {/* {console.log(brandName)} */}
