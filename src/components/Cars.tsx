@@ -1,10 +1,21 @@
-function Cars(props: any){
+type GarageProps = {
+    carDetails: {
+    brandName: string;
+    Model: string;}
+    color: string;
+}
+
+
+
+function Cars({carDetails, color}: GarageProps){
+
+
 
     // const {brandName, Model, color} = props;
     // console.log(brandName)   
-    const {carDetails} =props;
+  
     const {brandName, Model} = carDetails;
-    const color = "red";
+  
     return(
         <>
             <h2>
