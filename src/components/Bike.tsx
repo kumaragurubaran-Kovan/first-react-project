@@ -1,22 +1,22 @@
-// import { Component } from "react";
+import { Component } from "react";
 
-// class Bike extends Component{
+class Bike extends Component{
      
-//     render() {
-//         type bikeProps = {
-//         brandName: string;
-//         Model: string;
-//         };
+    render() {
+        type bikeProps = {
+        brandName: string;
+        Model: string;
+        };
 
-//         const { bikeDetails} = this.props;
-//         const {brandName, Model} = bikeDetails;
+        const { bikeDetails} = this.props;
+        const {brandName, Model} = bikeDetails;
 
-//         return(
-//             <>
-//             <h3>My Bike is {brandName} {Model}</h3>
-//             </>
-//         )
-//     }
-// }
+        return(
+            <>
+            <h3>My Bike is {brandName} {Model}</h3>
+            </>
+        )
+    }
+}
 
-// export default Bike;
+export default Bike;
