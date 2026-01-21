@@ -3,10 +3,14 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import Garage from './components/Garage'
 import ColourChange from './components/ColorChange'
+import CountRender from './components/CountRender'
+
 
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-      <ColourChange />
-  </StrictMode>,
+  <>
+      {/* <Garage /> */}
+      {/* <ColourChange /> */}
+      <CountRender />
+  </>,
 )
