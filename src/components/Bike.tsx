@@ -1,14 +1,12 @@
-import { Component } from "react";
-
-class Bike extends Component{
-     
-    render() {
-        type bikeProps = {
+type bikeProps ={
+    bikeDetails: {
         brandName: string;
         Model: string;
-        };
+    }
+}
 
-        const { bikeDetails} = this.props;
+function Bike({bikeDetails}: bikeProps){
+
         const {brandName, Model} = bikeDetails;
 
         return(
@@ -16,7 +14,7 @@ class Bike extends Component{
             <h3>My Bike is {brandName} {Model}</h3>
             </>
         )
-    }
+
 }
 
 export default Bike;

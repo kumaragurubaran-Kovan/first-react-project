@@ -1,5 +1,5 @@
 import Cars from "./Cars";
-// import Bike from "./Bike";
+import Bike from "./Bike";
 
 
 
@@ -13,8 +13,8 @@ function Garage(){
     }
 
     const bikeDetails = {
-        brandName: "Bajaj",
-        Model: "AR",
+        // brandName: "Bajaj",
+        // Model: "AR",
     }
 
     return(
@@ -22,7 +22,8 @@ function Garage(){
             <h1>Cars</h1>
             <Cars carDetails = {carDetails} color="red"/>
             {/* {console.log(brandName)} */}
-            {/* <Bike bikeDetails = {bikeDetails}/> */}
+            {bikeDetails.brandName !== undefined && bikeDetails.Model !== undefined ?
+            <Bike bikeDetails = {bikeDetails}/> :null}
         </>
     )
 }
