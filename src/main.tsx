@@ -4,13 +4,14 @@ import './index.css'
 import Garage from './components/Garage'
 import ColourChange from './components/ColorChange'
 import CountRender from './components/CountRender'
-
+import Form from './components/form'
 
 
 createRoot(document.getElementById('root')!).render(
   <>
       {/* <Garage /> */}
       {/* <ColourChange /> */}
-      <CountRender />
+      {/* <CountRender /> */}
+      <Form/>
   </>,
 )
