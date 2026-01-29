@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Form from "./form";
+// import Form from "./form";
 
 // function getResponse(){
 //     const saved = localStorage.getItem("formData");
@@ -11,8 +11,8 @@ import Form from "./form";
 function viewResponse(){
     
     const [response, setResponse ] = useState<any>([])
-    const[editIndex, setEditIndex] = useState()
-    const[editData, setEditData] = useState()
+    const[editIndex, setEditIndex] = useState<number | null>(null)
+    const[editData, setEditData] = useState<any>(null)
 
 
     useEffect(()=>{
@@ -29,7 +29,17 @@ function viewResponse(){
     console.log("saved2:", response)
     console.log("typee",typeof response)
 
-    const responseData = response.map(formResponse =>({
+    type FormResponse={
+        Name: string,
+        Email: string,
+        Phone: string,
+        Message: string,
+        Country: string,
+        Gender: string,
+        Education: string,
+    }
+
+    const responseData = response.map((formResponse: FormResponse) =>({
         
             Name: formResponse.Name,
             Email: formResponse.Email,
@@ -44,12 +54,9 @@ function viewResponse(){
 
 
     console.log("responseData1 :",responseData)
-    responseData.forEach(item => {
-        console.log(item.Name);
-    });
 
     function deleteResponse(index:number){
-        const updatedResponse = response.filter((_,i)=> i !== index)
+        const updatedResponse = response.filter((_ :number,i: number)=> i !== index)
         setResponse(updatedResponse)
         localStorage.setItem("formData", JSON.stringify(updatedResponse))
         console.log("updated response",updatedResponse)
@@ -72,7 +79,7 @@ function viewResponse(){
     function saveEdit() {
         if (editIndex === null || !editData) return;
 
-        const updatedResponses = response.map((item, index) =>
+        const updatedResponses = response.map((item:any, index:number) =>
             index === editIndex ? editData : item
         );
 
@@ -85,7 +92,7 @@ function viewResponse(){
 
     return(
         <div className="flex flex-col bg-blue-950 items-center">
-            <div className="w-120 bg-white m-10 p-10 rounded-xl h-126 overflow-y-auto">
+            <div className="w-120 bg-white m-10 p-10 rounded-xl ">
                 <div className="flex justify-between">
                     <h1 className="font-bold text-xl">Submitted Form</h1>
                     <a href="/">
@@ -122,7 +129,7 @@ function viewResponse(){
                     <h1 className="font-semibold"> Education </h1>
                     <div className="bg-slate-50/50 border-2 border-slate-400 px-2 py-1 rounded-lg">{response.Education}</div>
                 </div> */}
-                {response.map((item,index)=>(
+                {response.map((item:any,index:number)=>(
                     <div key={index} className=" mt-4 bg-red-50 border-2 border-red-900/20 p-4 rounded-lg">
 
                     {editIndex === index ? (

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import {getNames} from "country-list";  
-import viewResponse from "./form-response";
 import { Link } from "react-router-dom";
 
 
@@ -52,7 +51,7 @@ function Form(){
     return(
         <div className="flex flex-col bg-blue-950 items-center">
             <form className="flex flex-col bg-blue-950 items-center" onSubmit={handleSubmit}>
-                <div className="w-120 bg-white mt-5 p-10 rounded-xl h-126 overflow-y-auto">
+                <div className="w-120 bg-white mt-5 p-10 rounded-xl">
                     <label className="flex flex-col place-left text-left">
                         Name <br/>
                         <input className="border-2 p-1 rounded-md mt-1 border-slate-400" type="text" minLength={3} name="Name" onChange={handleChange} placeholder="Enter Your Name" required/>
